@@ -1,0 +1,38 @@
+{
+    "name": "dankest-konami",
+    "version": "0.0.1",
+    "description": "Given the right key combination magical things can happen",
+    "main": "dist/konami.js",
+    "scripts": {
+        "build": "rm -rf dist && tsc",
+        "test": "browserify test/*.ts -p [tsify] | tape-run | tap-spec",
+        "serve": "serve dist"
+    },
+    "repository": "git+https://github.com/bilderberg-the-man/konami.git",
+    "author": "bilderberg <bilderberg@fuckjava.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/bilderberg-the-man/konami/issues"
+    },
+    "homepage": "https://github.com/bilderberg-the-man/konami#readme",
+    "dependencies": {
+        "@types/lodash": "^4.14.88",
+        "lodash": "^4.17.4"
+    },
+    "devDependencies": {
+        "@types/tape": "^4.2.31",
+        "browserify": "^14.5.0",
+        "pre-commit": "^1.2.2",
+        "serve": "^6.4.1",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.8.0",
+        "tape-run": "^3.0.1",
+        "tsify": "^3.0.4",
+        "tslint": "^5.8.0",
+        "tslint-config-standard": "^7.0.0",
+        "typescript": "^2.6.2"
+    },
+    "pre-commit": [
+        "test"
+    ]
+}
