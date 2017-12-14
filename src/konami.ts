@@ -23,7 +23,7 @@ export default class implements Konami {
   public keyList: number[] = []
 
   public constructor () {
-    document.addEventListener('keyup', (e: KeyboardEvent):void => {
+    document.addEventListener('keyup', (e: KeyboardEvent): void => {
       this.addAndConfirmKey(e.keyCode)
     })
   }
@@ -43,18 +43,17 @@ export default class implements Konami {
    *
    * @param key number
    * @returns undefined
-  */
-  public addAndConfirmKey(key: number): void{
+   */
+  public addAndConfirmKey (key: number): void {
     if (konamiCode[this.keyList.length] !== key) {
       // incorrect konami reset the array
       this.keyList = []
-    }
-    else {
+    } else {
       // at this point, the konami code is correct
       this.keyList.push(key)
 
       // verify the entire code has been entered
-      if(isEqual(konamiCode, this.keyList)) {
+      if (isEqual(konamiCode, this.keyList)) {
         this.onSuccess()
 
         // reset the keyword list so we can do it again
