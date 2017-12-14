@@ -3,7 +3,7 @@ import { isEqual } from 'lodash'
 
 const test = require('tape')
 
-test('Given the key entered is valid the keyList is updated', (t: any) => {
+test('Given the key entered is valid, the keyList is updated', (t: any) => {
   let konami = new Konami()
 
   konami.addAndConfirmKey(38)
@@ -15,41 +15,35 @@ test('Given the key entered is valid the keyList is updated', (t: any) => {
   t.end()
 })
 
-test('Given the key entered is invalid the keyList is reset', (t: any) => {
+test('Given the key entered is invalid, the keyList is reset', (t: any) => {
   let konami = new Konami()
 
   konami.addAndConfirmKey(38)
-  konami.addAndConfirmKey(41)
+  konami.addAndConfirmKey(38)
+  konami.addAndConfirmKey(42)
 
   t.ok(isEqual(konami.keyList, []))
   t.end()
 })
 
-test('Given the full Konami code has been entered the `onsuccess` function is called', (t: any) => {
+test('Given the full Konami code has been entered, the `onSuccess` function is called', (t: any) => {
   let konami = new Konami()
 
-  konami.onSuccess = (): void => {
-    t.ok(true) // should be called
+  konami.onSuccess = () => {
+    t.ok(true)
   }
 
-  konamiCode.forEach((key: number): void => {
-    konami.addAndConfirmKey(key)
-  })
-
+  konamiCode.forEach(key => { konami.addAndConfirmKey(key) })
   t.end()
 })
 
-test('Given the full Konami code has not been entered the `onsuccess` function is not called', (t: any) => {
+test('Given the full Konami code has not been entered, the `onSuccess` function is not called', (t: any) => {
   let konami = new Konami()
-  let code = [38, 38, 40, 40, 37]
 
-  konami.onSuccess = (): void => {
-    t.ok(false) // Should not be called
+  konami.onSuccess = () => {
+    t.ok(false)
   }
 
-  code.forEach((key: number): void => {
-    konami.addAndConfirmKey(key)
-  })
-
+  t.ok(true)
   t.end()
 })
