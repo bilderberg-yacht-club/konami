@@ -1,6 +1,6 @@
 {
     "name": "dankest-konami",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Given the right key combination magical things can happen",
     "main": "dist/konami.js",
     "scripts": {
