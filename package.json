@@ -6,15 +6,14 @@
     "scripts": {
         "build": "rm -rf dist && tsc",
         "test": "browserify test/*.ts -p [tsify] | tape-run | tap-spec",
-        "serve": "serve dist"
+        "lint": "tslint 'src/**/*.ts'"
     },
-    "repository": "git+https://github.com/bilderberg-the-man/konami.git",
-    "author": "bilderberg <bilderberg@fuckjava.com>",
+    "repository": "git+https://github.com/bilderberg-yacht-club/konami.git",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/bilderberg-the-man/konami/issues"
+        "url": "https://github.com/bilderberg-yacht-club/konami/issues"
     },
-    "homepage": "https://github.com/bilderberg-the-man/konami#readme",
+    "homepage": "https://github.com/bilderberg-yacht-club/konami#readme",
     "dependencies": {
         "@types/lodash": "^4.14.88",
         "lodash": "^4.17.4"
@@ -23,7 +22,6 @@
         "@types/tape": "^4.2.31",
         "browserify": "^14.5.0",
         "pre-commit": "^1.2.2",
-        "serve": "^6.4.1",
         "tap-spec": "^4.1.1",
         "tape": "^4.8.0",
         "tape-run": "^3.0.1",
@@ -33,6 +31,34 @@
         "typescript": "^2.6.2"
     },
     "pre-commit": [
-        "test"
+        "test",
+        "lint"
+    ],
+    "author": {
+      "name": "Tim Warren",
+      "email": "tim@protonmail.ch",
+      "url": "https://github.com/bilderberg-yacht-club"
+    },
+    "contributors": [
+      {
+        "name": "Allison Higginbotham",
+        "email": "allison@fortyau.com",
+        "url": "https://fortyau.com"
+      },
+      {
+        "name": "Chuck Pfaff",
+        "email": "chuck@fortyau.com",
+        "url": "https://fortyau.com"
+      },
+      {
+        "name": "David Savage",
+        "email": "chuck@fortyau.com",
+        "url": "https://fortyau.com"
+      },
+      {
+        "name": "Kyle McCormick",
+        "email": "kyle@fortyau.com",
+        "url": "https://fortyau.com"
+      }
     ]
 }
